@@ -14,6 +14,7 @@ class BankAccount:
         """
         if amount > 0:
             self.account_balance += amount
+            print(f"Deposited: {amount}")
             return True
         return False
 
@@ -24,11 +25,14 @@ class BankAccount:
         """
         if 0 < amount <= self.account_balance:
             self.account_balance -= amount
+            print(f"Withdrew: {amount}")
             return True
-        return False
+        else:
+            print("Insufficient funds")
+            return False
 
     def display_balance(self):
         """
         Print the current balance in a user-friendly format.
         """
-        print(f"Current balance: {self.account_balance}")
+        print(f"Current Balance: {self.account_balance}")
